@@ -45,7 +45,7 @@ echap -> pour sortie dans le mode dans lequel on se trouve
 :wq -> pour quitter et sauvegarder (w pour write et q quitter)
 :q! -> pour quitter sans sauvegarder
 
-On doit passer le nom de la branch principal de "master à "main" pour remplacer la notion de mâitre-esclave.
+On doit passer le nom de la branch principal de "master" à "main" pour remplacer la notion de mâitre-esclave.
 ```sh
 git config --global init.defaultBranch main
 ```
@@ -67,10 +67,82 @@ git help config
 ```sh
 git clone 'https du dépôt distant'
 ```
+
 **Pour consulter l'état du dépôt:** 
 ```sh
-git status'
+git status
 ```
+
+**Premier push:** 
+```sh
+git push --orgin master
+```
+
+**Ignorer des fichiers**
+Il suffit créer un fichier .gitignore et d'y ajouter les élèments a ignorer.<br>
+`vim .gitignore` et ajouter ce qu'il y a à ignorer
+
+**Consulter l'état d'un fichier**
+```sh
+git status
+git diff
+```
+`git status` présente l'état global du dépôt , modifié ou non et `git diff` présente les modifications apportées aux fichiers.<br>
+On peut utiliser `git diff` de façon plus précise :
+```sh
+git diff --staged
+```
+
+**Valider des modifications**
+```sh
+git commit -m "message"
+```
+
+**Effacer des fichiers**
+```sh
+rm <fichier>
+git status
+git rm <fichier>
+```
+Dernière forme va supprimer le fichier au prochain commit.
+```sh
+git rm --cached <fichier>
+```  
+Cette commande va supp le fichier de l'index mais pas du disque dur.
+
+**La commande log est très puissante et possède de nombreuses options. En voici quelques-unes :**
+
+```sh
+git log -p -2
+```
+Cette commande affiche les deux derniers commits avec les différences introduites.
+
+```sh
+git log --stat
+```
+Cette commande affiche des statistiques sur les fichiers modifiés à chaque commit.
+
+```sh
+git log --pretty=oneline
+```
+Cette commande affiche chaque commit sur une seule ligne.
+
+```sh
+git log --pretty=format:"%h %s" --graph
+```
+Cette commande affiche l’historique sous forme d’un graphe.
+
+**Annuler des modifications**
+```sh
+
+git commit --amend
+```
+Cette commande permet de modifier le dernier commit.
+
+```sh
+git reset HEAD <fichier>
+```
+Cette commande permet de retirer un fichier de l'index.
 
 ![Alt text](/img/gitcyclevie.png)
 
@@ -79,6 +151,33 @@ git status'
 - ssh : pour un accès lecture/écriture (read/write)
 - personnal access token (PAT) :
 
+#### Desindexer des elements deja commits
+
+TODO: A completer
+
+#### La creation de tags (ou etiquettes)
+En plus d'identier les commits par des identifiants uniques, Git vous permet aussi d'etiqueter un certain etat de l'historique (commit) comme etant important. Cela peut etre utile pour marquer des versions de votre code source.
+```sh
+git tag -a v1.0 -m "Version 1.0"
+```
+
+On peut lister les tags avec la commande suivante :
+```sh
+git tag
+```
+On peut aussi filtrer les tags avec la commande suivante :
+
+```sh
+git tag -l "v1.8.5*"
+```
+Pour visualier une etiquette, on utilise la commande suivante :
+
+```sh
+
+git show v1.4
+```
+
+![Alt text](/img/image-4.png)
 
 #### Sur Github :
 >-> setting
@@ -86,5 +185,3 @@ git status'
 >>> -> Personnal Access Token
 >>>>-> Token Classic <br>
 Configurer un token avec ses autorisations et ça durée de validitée
-
-
