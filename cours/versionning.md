@@ -38,6 +38,6 @@ Les deux principaux systèmes de contrôle de version sont :
 Contrairement à SVN, Git est distribué, signifiant que chaque développeurs a une copie complète du dépôt avec tout l'historique des versions.
 
 **Diférence entre SVN et Git**
-![Alt text](svngit.png)
+![Alt text](/img/svngit.png)
 
 **On efface SVN de notre cerveau !!!**
