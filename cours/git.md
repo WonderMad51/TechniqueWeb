@@ -8,3 +8,83 @@ Git ne stocke pas le fichier à nouveau, mais un len vers le fichier identique p
 ![Alt text](/img/gitgestion.png)
 
 Git gère l'intégriter des données.<br>
+Impossible de modifier un fichier sans que Git ne le sache pas.<br>
+Le mécanisme qu'utilise Git est appelé une empreinte `SHA-1`. Un chaine de caractères composées de 40 caractères hexdécimaux qui ressemble à ça :
+```sh
+24b9da655589155aa489562fe151982
+```
+**Avec Git très peu d'opérations sont destructives**<br>
+
+Git a troid état principaux dans lesquels peuvent se trouver vos fichiers :
+- Working directory
+- Staring area
+- .git directory (Repository)
+
+### Le première utilisation de Git
+Git possède un un outil : Git config.<br>
+Il permet de configurer les paramètres de Git sur notre système.  Ils peuvent être stocké dans 3 ednroits différents :
+- [chemin]/etc/config
+- fichier ~/.gitconfig
+- fichier config dans le répertoire Git d'un dépôt en cours d'utilisation (specifique au dépôt en local) donc les valeurs .gi/config écrasent celles de /etc/config
+
+Sur OS Windows, Git recherché fichier `.gitconfig`.<br>
+Le fichier ne peut être modifié qu'avec la commande `git config -f` en tant qu'administrateur.
+
+#### Pour en savoir plus, entrer la commande :
+```sh
+git config --list --show-origin
+```
+#### Configurez son identité
+```sh
+git config --global user.name "JohnDoe"
+git config --global user.email "mon@mail.com"
+```
+#### VIM
+i -> pour passer en mode instertion
+echap -> pour sortie dans le mode dans lequel on se trouve
+:wq -> pour quitter et sauvegarder (w pour write et q quitter)
+:q! -> pour quitter sans sauvegarder
+
+On doit passer le nom de la branch principal de "master à "main" pour remplacer la notion de mâitre-esclave.
+```sh
+git config --global init.defaultBranch main
+```
+
+#### Vérifier ses paramètres
+```sh
+git config --list
+git config user.name
+```
+
+#### Obtenir à l'aide
+```sh
+git help config
+```
+
+### Base de Git
+/!\Pas d'espace ni de caractère spéciaux dans les noms/!\
+**Pour cloner un dépôt existant :** 
+```sh
+git clone 'https du dépôt distant'
+```
+**Pour consulter l'état du dépôt:** 
+```sh
+git status'
+```
+
+![Alt text](/img/gitcyclevie.png)
+
+**Quel types d'accès utiliser:**
+- https : pour un accès en lecture seule (read-only)
+- ssh : pour un accès lecture/écriture (read/write)
+- personnal access token (PAT) :
+
+
+#### Sur Github :
+>-> setting
+>>    -> Dev Setting
+>>> -> Personnal Access Token
+>>>>-> Token Classic <br>
+Configurer un token avec ses autorisations et ça durée de validitée
+
+
