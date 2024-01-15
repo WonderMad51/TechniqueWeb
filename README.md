@@ -11,3 +11,4 @@ Notes et exercices du cours de la semaine sur les bonnes techniques du web
 
 ### 2. TP
 - [TP1](/tp/tp1.md)
+- [TP2](/tp/tp2.md)
