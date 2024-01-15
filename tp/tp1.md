@@ -1,4 +1,4 @@
-# **TP1**
+# **TP1: Introduction et Bases de Git**
 ![Alt text](/img/tp1.png)
 
 ## ***Tâche 1***
