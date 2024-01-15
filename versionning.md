@@ -14,9 +14,30 @@ On peut donc :
 - Backup et rétablissement
 - Branching et merging : les dévs peuvents créer des branchs pour travailler sur des fonctionnalités ou des corrections séparément (branching) , puis intégrer ces changements dans la ligne principale de développement (mergin)
 
-** Exemples de nomenclature de versionning :**
+**Exemples de nomenclature de versionning :**
 - MAJEUR
 - MINEURE
 - CORRECTIF
 
-Un exemple de version peut être : `2.1.3`S
+Un exemple de version peut être : `2.1.3`
+
+Les deux principaux systèmes de contrôle de version sont :
+- Git
+- Subversion (SVN)
+
+**Opération et fonctionnalités SVN**
+- checkout/commit/update, est une opération locale
+- branching/merging, permet le travail à plusieurs
+
+
+**Opération et fonctionnalités Git**
+- branching/merging, système plus simple et plus rapides
+- stagging area, permet de préparer et de réviser les modifications avant de les commettres
+- flexibilité, git support de nombreux workflow  
+
+Contrairement à SVN, Git est distribué, signifiant que chaque développeurs a une copie complète du dépôt avec tout l'historique des versions.
+
+**Diférence entre SVN et Git**
+![Alt text](svngit.png)
+
+**On efface SVN de notre cerveau !!!**
