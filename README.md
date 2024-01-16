@@ -1,6 +1,6 @@
-# **Bonne Techniqe du Web**
+# **Bonne Technique du Web**
 
-Notes et exercices du cours de la semaine sur les bonnes techniques du web
+Notes et exercices du cours de la semaine sur les bonnes techniques du web.
 
 ## Index
 

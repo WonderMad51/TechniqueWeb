@@ -17,4 +17,4 @@ On utilise '>' pour faire des quotes.
 > Quote niveau1
 >> Quote niveau 2
 
-Balise `` pour "surlginer" une partie du texte.
+Balise " `` " pour `surlginer` une partie du texte.

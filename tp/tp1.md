@@ -25,10 +25,10 @@ Je crée une nouvelle branch et me déplace dessus avec :
 ```sh
 git checkout -b "branchTp"
 ```  
-Je modifie le fichier README.md :
+Je modifie le fichier README.md :<br>
 ![Alt text](/img/Tp1Tache3.png)
-Mon fichier est racké et est bien modifié :
-![Alt text](/img/Tp1Tache32.png.png)
+Mon fichier est tracké et est bien modifié :<br>
+![Alt text](/img/Tp1Tache32.png)
 Je procède au commit de ma modification :
 ```sh
 git add .
@@ -37,5 +37,5 @@ git add .
 ```sh
 git commit -m "Commit du TP1 Tache 3"
 ```
-Et la finalité :
+Et la finalité :<br>
 ![Alt text](/img/Tp1Tache33.png)
