@@ -78,7 +78,7 @@ git status
 git push --orgin master
 ```
 
-**Ignorer des fichiers**
+**Ignorer des fichiers**<br>
 Il suffit créer un fichier .gitignore et d'y ajouter les élèments a ignorer.<br>
 `vim .gitignore` et ajouter ce qu'il y a à ignorer
 
