@@ -18,4 +18,5 @@ Si nous avons ce message c'est que notre `push` a bien fonctionné.
 Après avoir cliqué sur `Compare & pull request`, ça nous ouvre la fenêtre ci-dessus. On peut donc écricre ce qu'apporte nos modification, dans quel but etc, ajouter des captures du résultat ou du code etc... Détaillé pour qu'un autre utilisateurs puisse comprendre au mieux son utilité.<br>
 Pour faire notre review, on va dans `file changed` pour voir les fichiers modifiés et lire le code. On peut y apporter des commentaires. A la suite de la relecture, la PR est accepter ou refuser (merge ou non).
 ![Alt text](/img/Tp4Tache24.png)
-Après ça on peut donc valider le `Merge` de notre PR et ainsi incorporer nos modifcations en production.
+Après ça on peut valider notre PR en `Merge pull request` de notre PR et ainsi incorporer nos modifcations en production.
+![Alt text](/img/Tp4Tache25.png)
