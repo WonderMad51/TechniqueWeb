@@ -14,3 +14,7 @@ Notes et exercices du cours de la semaine sur les bonnes techniques du web.
 - [TP2](/tp/tp2.md)
 - [TP3](/tp/tp3.md)
 - [TP4](/tp/tp4.md)
+
+### 3. TP Groupe
+Le lien du repository :<br>
+[Team Project Versioning](https://github.com/AlexisCro/team-project-versionning)

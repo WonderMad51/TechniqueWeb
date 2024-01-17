@@ -185,3 +185,201 @@ git show v1.4
 >>> -> Personnal Access Token
 >>>>-> Token Classic <br>
 Configurer un token avec ses autorisations et ça durée de validitée
+
+
+## Les branches
+
+Lorsque vous faites un commit, Git enregistre un objet de commit qui contient un pointeur vers l’arbre de contenu qui représente l’état de votre projet à ce moment-là. Ce pointeur de commit contient le nom SHA-1 du commit parent ou des commits parents qui ont précédé ce commit (il peut y avoir plus d’un parent dans le cas d’un commit de fusion). Par conséquent, à partir d’un commit, Git peut remonter toute l’histoire de votre projet.
+
+Pour creer une branche il suffit d'utiliser la commande suivante :
+```sh
+git branch <nom-de-branche>
+```
+Pour basculer vers une branche il suffit d'utiliser la commande suivante :
+```sh
+git checkout <nom-de-branche>
+```
+Pour créer et basculer directement sur une branch :
+```sh
+git checkout -b <nom-de-branche>
+```
+
+### Fusionner des branches
+***Situations***
+![Alxt Text](/img/image.png)
+On va commencer à travailler sur l'issue 53 et effetcuer un 1er commit :
+```sh
+git checkout -b iss53
+```
+![Alt text](/img/image-1.png)
+On a commencer à travailler dessus et décide de réaliser notre premier commit :
+```sh
+git commit -m "commit 3"
+```
+![Alt text](/img/image-2.png)
+On va ensuite rebasculer sur la branche msater afin d'effectuer un hotfix :
+```sh
+git checkout master
+```
+![Alt text](/img/image-3.png)
+```sh
+git branch hotfix
+git commit -m "commit 4"
+```
+Nous sommes satisfait du hotfix et nous allons le valider :
+```sh
+git checkout master
+git merge hotfix
+```
+On note la stratégie de merge utilisée par Git: Fast-forward
+![Alt text](/img/image-44.png)
+La branch hotfix n'a plus lieu d'être et nous allons la supp :
+```sh
+git branch -d hotfix
+```
+On va retourner sur iss et conitnuer de travailler dessus :
+```sh
+git checkout iss53
+```
+On effectue un nouveau commit afin de valider notre travail :
+```sh
+git commit -m "commit 5"
+```
+![Alt text](/img/image-5.png)
+On va maintenant retourner sur master et effectuer un merge avec iss53 :
+```sh
+git checkout master
+git merge iss53
+```
+La stratégie de merge est alors différente de celle uilisée précedement: Merge commit
+![Alt text](/img/image-6.png)
+Au lieu d'avancer la branch master, Git crée un nouveau commit qui contient les différences entre les 2 branches.
+![Alt text](/img/image-7.png)
+On peut supprimer la branch iss53 :
+```sh
+git branch -d iss53
+```
+
+### Resoudre des conflits
+
+Un conflit a lieu lorsque deux branches differentes ont modifiees la meme partie du meme fichier, ou si un fichier a ete supprime dans une branche alors qu'il a ete modifie dans une autre.
+
+![Alt text](/img/image-8.png)
+
+Physiquement, un conflit est represente par des caracteres speciaux qui apparaissent dans le fichier.
+
+![Alt text](/img/image-9.png)
+
+Apres resolution du conflit il suffit de commit.
+
+Vous avez un outil qui permet de resoudre les conflits avec git :
+
+```sh
+git mergetool
+```
+
+Pour afficher toutes les bramches :
+
+```sh
+
+git branch -a
+git branch --all
+```
+
+Parlons un peu de la commande `git fetch <distant>` : elle permet de synchroniser vos travaux, elle va rechercher le serveur qui heberge `<distant>` et va recuperer les modifications qui ont ete effectuees sur le serveur distant.
+
+#### Pousser des modifications
+```sh
+git push <distant> <branche>
+git push origin master
+git push -u origin master
+
+```
+Pour recuperer les modifications effectuees sur le serveur distant a propos de nouvelles branches ou de branches existantes :
+```sh
+git fetch <distant>
+```
+Pour recuperer des modifications et les fusionner avec vos branches locales :
+```sh
+git pull <distant> <branche>
+```
+La regle d'or lorsqu'on debute avec Git:
+`commit` -> `pull` -> `push`<br>
+Lorsque vous recuperez des branches distantes avec la commande fetch, vous ne creez pas automatiquement une branche locale qui suit la branche distante.<br>
+Vous devez creer une branche locale et la lier a la branche distante.
+```sh
+git checkout -b <nom-de-branche> <distant>/<nom-de-branche>
+Branch <nom-de-branche> set up to track remote branch
+<nom-de-branche> from <distant>.
+```
+On a un raccourci pour cette commande :
+```sh
+git checkout --track <distant>/<nom-de-branche>
+```
+Il y a meme encore plus court, si la branche locale n'existe pas encore :
+```sh
+git checkout <nom-de-branche>
+```
+Afin de visualiser tout ça on peut utiliser la commande suivante :
+```sh
+git fetch --all
+git branch -vv
+```
+Analysons un peu la commande suivante :
+```sh
+git push origin --delete une-branche
+```
+
+### Rebaser votre travail
+Avec Git il y deux manieres d'integrer les modifications d'une branche dans une autre :
+
+- La fusion (merge)
+- Le rebasage (rebase)
+
+![Alt text](/img/image-10.png)
+
+Apres un merge on obtient cela:
+```
+git checkout master
+
+git merge experiment
+```
+![Alt text](/img/image-11.png)
+Avec le rebase on aurait entré les commandes suivantes :
+```sh
+git checkout experiment
+git rebase master
+```
+Et voici ce qui se passe :<br>
+![Alt text](/img/image-12.png)
+Et voici le resultat final:<br>
+![Alt text](/img/image-13.png)
+
+### Rebaser votre travail (avancé)
+![Alt text](/img/image-14.png)
+La commande qui correspond au rebase cité en cours :
+```sh
+git rebase --onto master server client
+```
+Essaye d'extraire la branche client de la branche server et de la rebaser sur la branche master.
+![Alt text](/img/image-15.png)
+```sh
+git checkout master
+git merge client
+```
+![Alt text](/img/image-16.png)
+On peut aussi rebaser la branche server sur la branche master :
+```sh
+git rebase master server
+```
+![Alt text](/img/image-17.png)
+Vous pouvez ensuite merge server dans master:
+```sh
+git checkout master
+git merge server
+```
+![Alt text](/img/image-18.png)
+
+### Rebase or not Rebase ?
+
+La seule regle a respecter avec la commande Rebase: ne jamais rebase des modifications qui ont ete publiees sur un serveur distant (push).
