@@ -383,3 +383,6 @@ git merge server
 ### Rebase or not Rebase ?
 
 La seule regle a respecter avec la commande Rebase: ne jamais rebase des modifications qui ont ete publiees sur un serveur distant (push).
+
+
+Tiers de confiance pour partage sur Github.

@@ -15,11 +15,14 @@ On peut donc :
 - Branching et merging : les dévs peuvents créer des branchs pour travailler sur des fonctionnalités ou des corrections séparément (branching) , puis intégrer ces changements dans la ligne principale de développement (mergin)
 
 **Exemples de nomenclature de versioning :**
-- MAJEUR
-- MINEURE
-- CORRECTIF
+- MAJEUR : Indique une version qui fait des changements incompatibles avec les versions antérieures.
+- MINEURE : Indique l'ajout de nouvelles fonctionnalités de manière rétrocompatible.
+- CORRECTIF : Indique des corrections de bugs rétrocompatibles.
 
-Un exemple de version peut être : `2.1.3`
+Un exemple de version peut être : `2.1.3` où :
+- `2` est le numéro de version majeur.
+- `3` est le numéro de version mineur.
+- `1` est le numéro de version de correctif.
 
 Les deux principaux systèmes de contrôle de version sont :
 - Git
