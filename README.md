@@ -1,6 +1,6 @@
 # **Bonne Technique du Web**
 
-Notes et exercices du cours de la semaine sur les bonnes techniques du web.
+Notes, exercices et exmamen du cours de la semaine sur les bonnes techniques du web (versioning / Git / Github).
 
 ## Index
 
@@ -18,3 +18,6 @@ Notes et exercices du cours de la semaine sur les bonnes techniques du web.
 ### 3. TP Groupe
 Le lien du repository :<br>
 [Team Project Versioning](https://github.com/AlexisCro/team-project-versionning)
+
+### 4. Examen
+[Examen](/examen/examen.md)
