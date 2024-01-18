@@ -26,10 +26,10 @@ Je crée une nouvelle branch et me déplace dessus avec :
 git checkout -b "branchTp"
 ```  
 Je modifie le fichier README.md :<br>
-![Alt text](/img/Tp1Tache3.png)
+![Alt text](/img/Tp1Tache3.png)<br>
 Mon fichier est tracké et est bien modifié :<br>
-![Alt text](/img/Tp1Tache32.png)
-Je procède au commit de ma modification :
+![Alt text](/img/Tp1Tache32.png)<br>
+Je procède au commit de ma modification :<br>
 ```sh
 git add .
 ```
